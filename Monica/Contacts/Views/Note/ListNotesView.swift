@@ -13,29 +13,30 @@ struct ListNotesView: View {
     @Binding var notes: [Note]
 
     var body: some View {
-        VStack(alignment: .leading, content:{
-                ContactTitleSectionView(title: "Notes",
-                                        count: notes.count.description)
+        VStack(alignment: .leading){
+            ContactTitleSectionView(title: "Notes",
+                                    count: notes.count.description)
 
-                ForEach(notes, id: \.id) { note in
-                    VStack(alignment: .leading) {
-                        Text(note.body)
-                            .foregroundColor(Color("Body"))
-                            .font(.system(size: 17.0, weight: .regular, design: .rounded))
-                            .padding(.bottom, 3)
-                        Text("July 19, 2019")
-                            .foregroundColor(Color("Gray"))
-                            .font(.system(size: 12.0, weight: .regular, design: .rounded))
-                            .padding(.bottom, 15)
-                        Divider()
-                            .frame(height: 1)
-                            .background(Color("GrayBackground"))
-                    }
-                    .padding(.horizontal, 15)
-                    .padding(.top, 10)
-
+            ForEach(notes, id: \.id) { note in
+                VStack(alignment: .leading) {
+                    Text(note.body)
+                        .foregroundColor(Color("Body"))
+                        .font(.system(size: 17.0, weight: .regular, design: .rounded))
+                        .padding(.bottom, 3)
+                    Text("July 19, 2019")
+                        .foregroundColor(Color("Gray"))
+                        .font(.system(size: 12.0, weight: .regular, design: .rounded))
+                        .padding(.bottom, 15)
+                    Divider()
+                        .frame(height: 1)
+                        .background(Color("GrayBackground"))
                 }
-        }).background(Color.white)
+                .padding(.horizontal, 15)
+                .padding(.top, 10)
+
+            }
+        }
+        .background(Color.white)
     }
 }
 

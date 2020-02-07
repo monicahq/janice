@@ -65,11 +65,11 @@ class ContactDetailsViewModel: ObservableObject, UnidirectionalDataFlow {
                 self.listState = .items(data: contact)
 
                 if let activityDate = contact.lastActivityTogether {
-                    self.lastActivityDate = self.transformDate(date: activityDate) ?? ""
+                    self.lastActivityDate = self.transformDate(date: activityDate) ?? String.empty
                 }
 
-                if let bornText = contact.information?.dates["birthdate"]?.date {
-                    self.bornText = self.transformDate(date: bornText) ?? ""
+                if let bornText = contact.information?.getBirthdate() {
+                    self.bornText = (self.transformDate(date: bornText) ?? String.empty) + String.space + "(\(bornText.getAge().description))"
                 }
 
                 if let adress = contact.addresses.first {

@@ -43,3 +43,9 @@ struct Information: SwiftyJson {
     }
 
 }
+
+extension Information {
+    func getBirthdate() -> Date? {
+        self.dates["birthdate"]?.date
+    }
+}

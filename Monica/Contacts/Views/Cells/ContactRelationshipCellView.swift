@@ -22,7 +22,7 @@ struct ContactRelationshipCellView: View {
                 .foregroundColor(Color("Body"))
                 .font(.system(size: 17, weight: .regular, design: .rounded))
 
-            Text(relationship.name.rawValue)
+            Text((relationship.contact.information?.getBirthdate()?.getAge().description ?? String.empty) + relationship.name.rawValue)
                 .foregroundColor(Color("Gray"))
                 .font(.system(size: 12, weight: .regular, design: .rounded))
         }

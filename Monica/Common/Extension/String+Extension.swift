@@ -10,13 +10,22 @@ import Foundation
 import SwiftUI
 
 extension String {
+    static let empty = ""
+    static let space = " "
+}
 
+extension String {
     enum RegularExpressions: String {
         case phone = "^\\s*(?:\\+?(\\d{1,3}))?([-. (]*(\\d{3})[-. )]*)?((\\d{3})[-. ]*(\\d{2,4})(?:[-.x ]*(\\d+))?)\\s*$"
     }
 
-    func isValid(regex: RegularExpressions) -> Bool { return isValid(regex: regex.rawValue) }
-    func isValid(regex: String) -> Bool { return range(of: regex, options: .regularExpression) != nil }
+    func isValid(regex: RegularExpressions) -> Bool {
+        isValid(regex: regex.rawValue)
+    }
+    
+    func isValid(regex: String) -> Bool {
+        range(of: regex, options: .regularExpression) != nil
+    }
 
     func onlyDigits() -> String {
         let filtredUnicodeScalars = unicodeScalars.filter { CharacterSet.decimalDigits.contains($0) }

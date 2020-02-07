@@ -92,6 +92,7 @@
 		C1F9958D23CA63C1007E7A6E /* ContactTitleCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F9958C23CA63C1007E7A6E /* ContactTitleCellView.swift */; };
 		C1F9958F23CA68C2007E7A6E /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F9958E23CA68C2007E7A6E /* Avatar.swift */; };
 		C1F9959323CA6B61007E7A6E /* UrlImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F9959223CA6B61007E7A6E /* UrlImageView.swift */; };
+		C1FC978E23EA7D82002ED157 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FC978D23EA7D82002ED157 /* Date+Extension.swift */; };
 		C1FFBD0723CCA04B003E196A /* PhotoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FFBD0623CCA04B003E196A /* PhotoAPI.swift */; };
 		C1FFBD0923CCA689003E196A /* PhotoTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FFBD0823CCA689003E196A /* PhotoTarget.swift */; };
 		C1FFBD1423CD4FA2003E196A /* PhotosAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FFBD1323CD4FA2003E196A /* PhotosAssembly.swift */; };
@@ -207,6 +208,7 @@
 		C1F9958C23CA63C1007E7A6E /* ContactTitleCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTitleCellView.swift; sourceTree = "<group>"; };
 		C1F9958E23CA68C2007E7A6E /* Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
 		C1F9959223CA6B61007E7A6E /* UrlImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlImageView.swift; sourceTree = "<group>"; };
+		C1FC978D23EA7D82002ED157 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		C1FFBD0623CCA04B003E196A /* PhotoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAPI.swift; sourceTree = "<group>"; };
 		C1FFBD0823CCA689003E196A /* PhotoTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTarget.swift; sourceTree = "<group>"; };
 		C1FFBD1323CD4FA2003E196A /* PhotosAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAssembly.swift; sourceTree = "<group>"; };
@@ -385,6 +387,7 @@
 				C179F91D23ACDC290045E224 /* Font+Extension.swift */,
 				C14F9A4423E3D62E006BCC3D /* View+Extension.swift */,
 				C14F9A4823E3D86A006BCC3D /* String+Extension.swift */,
+				C1FC978D23EA7D82002ED157 /* Date+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -928,6 +931,7 @@
 				C1AF366623A1B1D5004DAD73 /* AuthenticationAssembly.swift in Sources */,
 				C1824BAD238A44CF007475D6 /* UnidirectionalDataFlow.swift in Sources */,
 				C1FFBD1423CD4FA2003E196A /* PhotosAssembly.swift in Sources */,
+				C1FC978E23EA7D82002ED157 /* Date+Extension.swift in Sources */,
 				C1B7035523863C250065BB34 /* DashboardView.swift in Sources */,
 				C1937261239E20EA00A0111E /* AppRootView.swift in Sources */,
 				C1824BB1238B87F5007475D6 /* Activity.swift in Sources */,
@@ -1097,7 +1101,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Monica/Preview Content\"";
-				DEVELOPMENT_TEAM = U3U673A4X7;
+				DEVELOPMENT_TEAM = LBG2HC972H;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Monica/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1105,7 +1109,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.julien.Monica;
+				PRODUCT_BUNDLE_IDENTIFIER = com.julien.monica.qa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1119,7 +1123,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Monica/Preview Content\"";
-				DEVELOPMENT_TEAM = U3U673A4X7;
+				DEVELOPMENT_TEAM = LBG2HC972H;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Monica/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1127,7 +1131,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.julien.Monica;
+				PRODUCT_BUNDLE_IDENTIFIER = com.julien.monica.qa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

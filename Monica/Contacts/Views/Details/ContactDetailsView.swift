@@ -68,59 +68,9 @@ struct ContactDetailsView: View {
         ScrollView {
             ZStack {
                 VStack {
-                    VStack(alignment: .leading, content:{
-                        ContactTitleCellView(contact: contact)
+                    ContactTitleCellView(contact: contact)
 
-                        HStack {
-                            Text("At a glance")
-                                .foregroundColor(Color("Body"))
-                                .font(.system(size: 20.0, weight: .regular, design: .rounded))
-                            Spacer()
-
-                            Text("Less")
-                                .foregroundColor(Color("Link"))
-                                .font(.system(size: 12, weight: .regular, design: .rounded))
-                        }
-                        .padding(.top, 20)
-                        .padding(.horizontal, spacing)
-
-                        HStack{
-                            Text("Born")
-                                .foregroundColor(Color("Gray"))
-                                .font(.system(size: 12, weight: .regular, design: .rounded))
-                            Spacer()
-
-                            Text("Last activity together")
-                                .foregroundColor(Color("Gray"))
-                                .font(.system(size: 12, weight: .regular, design: .rounded))
-                        }
-                        .padding(.horizontal, spacing)
-                        .padding(.top, 15)
-
-                        HStack{
-                            Text(viewModel.bornText)
-                                .foregroundColor(Color("Body"))
-                                .font(.system(size: 17, weight: .regular, design: .rounded))
-                            Spacer()
-                            Text(viewModel.lastActivityDate)
-                                .foregroundColor(Color("Body"))
-                                .font(.system(size: 17, weight: .regular, design: .rounded))
-                        }
-                        .padding(.horizontal, spacing)
-                        .padding(.top, 5)
-
-                        ImageAndTextHorizontaleView(text: contact.addresses.first?.getCompleteAdress() ?? "",
-                                                    imageName: "map")
-                            .padding(.horizontal, spacing)
-
-                        ForEach(viewModel.contactFields, id: \.id) { contactField in
-                            ImageAndTextHorizontaleView(text: contactField.value,
-                                                        imageName: contactField.imageName)
-                                .padding(.horizontal, self.spacing)
-                        }
-                    })
-                        .background(Color.white)
-                        .padding(.top, 278)
+                    contactDetails(contact: contact)
 
                     RelationshipsView(viewModel: viewModel.relationships )
 
@@ -133,6 +83,8 @@ struct ContactDetailsView: View {
                     ActivitiesView(viewModel: .init(idContact: contact.id))
 
                 }
+                .padding(.top, 190)
+
 
                 // Top Layer (Header)
                 GeometryReader { gr in
@@ -141,7 +93,7 @@ struct ContactDetailsView: View {
                             .map {
                                 MapView(latitude: Double($0.latitude),
                                         longitude: Double($0.longitude))
-                                    .frame(height: self.calculateHeight(minHeight: 100,
+                                    .frame(height: self.calculateHeight(minHeight: 75,
                                                                         maxHeight: 200,
                                                                         yOffset: gr.frame(in: .global).origin.y))
                                     .offset(y: gr.frame(in: .global).origin.y < 0
@@ -156,6 +108,59 @@ struct ContactDetailsView: View {
         }
         .edgesIgnoringSafeArea(.vertical)
         .background(Color("GrayBackground"))
+    }
+
+    private func contactDetails(contact: Contact) -> some View {
+
+        VStack(alignment: .leading) {
+            HStack {
+                Text("At a glance")
+                    .foregroundColor(Color("Body"))
+                    .font(.system(size: 20.0, weight: .regular, design: .rounded))
+                Spacer()
+
+                Text("Less")
+                    .foregroundColor(Color("Link"))
+                    .font(.system(size: 12, weight: .regular, design: .rounded))
+            }
+            .padding(.top, spacing)
+            .padding(.horizontal, spacing)
+
+            HStack{
+                Text("Born")
+                    .foregroundColor(Color("Gray"))
+                    .font(.system(size: 12, weight: .regular, design: .rounded))
+                Spacer()
+
+                Text("Last activity together")
+                    .foregroundColor(Color("Gray"))
+                    .font(.system(size: 12, weight: .regular, design: .rounded))
+            }
+            .padding(.horizontal, spacing)
+            .padding(.top, spacing)
+
+            HStack{
+                Text(viewModel.bornText)
+                    .foregroundColor(Color("Body"))
+                    .font(.system(size: 17, weight: .regular, design: .rounded))
+                Spacer()
+                Text(viewModel.lastActivityDate)
+                    .foregroundColor(Color("Body"))
+                    .font(.system(size: 17, weight: .regular, design: .rounded))
+            }
+            .padding(.horizontal, spacing)
+            .padding(.top, 5)
+
+            ImageAndTextHorizontaleView(text: contact.addresses.first?.getCompleteAdress() ?? "",
+                                        imageName: "map")
+                .padding(.horizontal, spacing)
+
+            ForEach(viewModel.contactFields, id: \.id) { contactField in
+                ImageAndTextHorizontaleView(text: contactField.value,
+                                            imageName: contactField.imageName)
+                    .padding(.horizontal, self.spacing      )
+            }
+        }.background(Color.white)
     }
 }
 
