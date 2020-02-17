@@ -22,7 +22,7 @@ struct SigninView: View {
                         Image("panda")
                             .padding(.top, 43)
 
-                        Text("Monica is your private personal space to document everything you know about the most important people in your life.")
+                        Text("text_accueil")
                             .foregroundColor(Color.white)
                             .font(.SFUIDisplayFontRegularSeventeen())
                             .multilineTextAlignment(.center)
@@ -31,7 +31,7 @@ struct SigninView: View {
 
 
                         NavigationLink(destination: LoginView(viewModel: .init())) {
-                            Text("Sign in")
+                            Text("signin")
                                 .foregroundColor(Color("MonicaBlue"))
                                 .font(.system(size: 17.0, weight: .semibold, design: .rounded))
                                 .frame(width: geometry.size.width - 30, height: 50.0)
@@ -48,5 +48,6 @@ struct SigninView: View {
 struct SigninView_Previews: PreviewProvider {
     static var previews: some View {
         SigninView()
+            .environment(\.locale, .init(identifier: "en"))
     }
 }

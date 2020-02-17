@@ -26,7 +26,7 @@ class AuthenticationService: ObservableObject {
         self.userSessionSubject = CurrentValueSubject(userSession)
     }
 
-    func login(username:String, password:String)-> AnyPublisher<UserSession?, Never>  {
+    func login(username:String, password:String)-> AnyPublisher<UserSession?, Error>  {
         return authenticationApi
             .login(email: username, password: password)
             .map {[unowned self] token -> UserSession? in
@@ -35,9 +35,6 @@ class AuthenticationService: ObservableObject {
                     return self.userSession
                 }
                 return nil
-            }
-            .catch { error in
-                Just<UserSession?>(nil)
             }
             .eraseToAnyPublisher()
     }

@@ -1,0 +1,17 @@
+/* 
+  EnglishTexts.strings
+  Monica
+
+  Created by Julien Hamon on 2020-02-11.
+  Copyright © 2020 julien hamon. All rights reserved.
+*/
+"text_accueil" = "Monica is your private personal space to document everything you know about the most important people in your life.";
+"signin" = "Sign in";
+"email" = "E-mail";
+"placeholder_email" = "Enter your Email.";
+"placeholder_password" = "Enter a password";
+"password" = "Password";
+"error" = "Error";
+"ok" = "Ok";
+"alert_login_error" = "Check your email or your password field.";
+

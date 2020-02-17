@@ -13,17 +13,24 @@ struct LabelTextFieldView: View {
 
     var label: String
     var placeHolder: String
+    var isSecure:Bool
 
     var body: some View {
         VStack(alignment: .leading) {
-            Text(label)
-                .font(.headline)
-            TextField(placeHolder,
-                      text: self.$value)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding(.all)
+            Text(NSLocalizedString(label, comment: label))
+                .font(.system(size: 11.0, weight: .regular, design: .rounded))
+                .foregroundColor(Color("Body"))
+            if isSecure {
+                SecureField(NSLocalizedString(placeHolder, comment: placeHolder), text: $value)
+                .padding(.top, 5)
+
+            } else {
+                TextField(NSLocalizedString(placeHolder, comment: placeHolder),
+                      text: $value)
+                .padding(.top, 5)
+            }
+
         }
-        .padding(.horizontal, 15)
     }
 }
 
@@ -32,8 +39,14 @@ struct LabelTextFieldView_Previews: PreviewProvider {
     @State static var value = ""
 
     static var previews: some View {
-        LabelTextFieldView(value: $value, label: "test",
-                           placeHolder: "Placeholder")
+        Group {
+            LabelTextFieldView(value: $value, label: "email",
+            placeHolder: "Placeholder", isSecure: false)
+            LabelTextFieldView(value: $value, label: "test",
+                       placeHolder: "Placeholder", isSecure: true)
+        }.environment(\.locale, .init(identifier: "en"))
+
+
     }
 }
 #endif
