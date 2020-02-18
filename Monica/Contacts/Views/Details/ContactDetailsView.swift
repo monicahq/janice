@@ -14,6 +14,9 @@ struct ContactDetailsView: View {
     @ObservedObject var viewModel: ContactDetailsViewModel
 
     private let spacing: CGFloat = 15
+    private let paddingHeaderTop: CGFloat = 180
+    private let topSizeHeaderMin: CGFloat = 96
+    @State private var animationAmount: CGFloat = 1
 
     var body: some View {
         switch viewModel.listState {
@@ -53,13 +56,21 @@ struct ContactDetailsView: View {
         if maxHeight + yOffset < minHeight {
             // SCROLLING UP
             // Never go smaller than our minimum height
+            if animationAmount != 3 {
+                animationAmount = 3
+            }
             return minHeight
         }
         else if maxHeight + yOffset > maxHeight {
+            if animationAmount > 1 {
+                animationAmount = 1
+            }
             // SCROLLING DOWN PAST MAX HEIGHT
             return maxHeight + (yOffset * 0.5) // Lessen the offset
         }
-
+        if animationAmount > 1 {
+            animationAmount = 1
+        }
         // Return an offset that is between the min and max heights
         return maxHeight + yOffset
     }
@@ -83,7 +94,7 @@ struct ContactDetailsView: View {
                     ActivitiesView(viewModel: .init(idContact: contact.id))
 
                 }
-                .padding(.top, 190)
+                .padding(.top, paddingHeaderTop)
 
 
                 // Top Layer (Header)
@@ -93,12 +104,14 @@ struct ContactDetailsView: View {
                             .map {
                                 MapView(latitude: Double($0.latitude),
                                         longitude: Double($0.longitude))
-                                    .frame(height: self.calculateHeight(minHeight: 75,
+                                    .frame(height: self.calculateHeight(minHeight: self.topSizeHeaderMin,
                                                                         maxHeight: 200,
                                                                         yOffset: gr.frame(in: .global).origin.y))
                                     .offset(y: gr.frame(in: .global).origin.y < 0
                                         ? abs(gr.frame(in: .global).origin.y)
                                         : -gr.frame(in: .global).origin.y)
+                                    .blur(radius: (self.animationAmount - 1) * 3)
+
                         }
                         Spacer()
                     }
@@ -161,7 +174,7 @@ struct ContactDetailsView: View {
             ForEach(viewModel.contactFields, id: \.id) { contactField in
                 ImageAndTextHorizontaleView(text: contactField.value,
                                             imageName: contactField.imageName)
-                    .padding(.horizontal, self.spacing      )
+                    .padding(.horizontal, self.spacing)
             }
         }.background(Color.white)
     }
