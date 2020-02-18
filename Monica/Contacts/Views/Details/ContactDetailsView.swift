@@ -121,7 +121,7 @@ struct ContactDetailsView: View {
 
                 Text("Less")
                     .foregroundColor(Color("Link"))
-                    .font(.system(size: 12, weight: .regular, design: .rounded))
+                    .font(.SFUIDisplayFontRegularTwelve())
             }
             .padding(.top, spacing)
             .padding(.horizontal, spacing)
@@ -129,12 +129,13 @@ struct ContactDetailsView: View {
             HStack{
                 Text("Born")
                     .foregroundColor(Color("Gray"))
-                    .font(.system(size: 12, weight: .regular, design: .rounded))
+                    .font(.SFUIDisplayFontRegularTwelve())
+
                 Spacer()
 
                 Text("Last activity together")
                     .foregroundColor(Color("Gray"))
-                    .font(.system(size: 12, weight: .regular, design: .rounded))
+                    .font(.SFUIDisplayFontRegularTwelve())
             }
             .padding(.horizontal, spacing)
             .padding(.top, spacing)
@@ -142,11 +143,13 @@ struct ContactDetailsView: View {
             HStack{
                 Text(viewModel.bornText)
                     .foregroundColor(Color("Body"))
-                    .font(.system(size: 17, weight: .regular, design: .rounded))
+                    .font(.SFUIDisplayFontRegularSeventeen())
+
                 Spacer()
                 Text(viewModel.lastActivityDate)
                     .foregroundColor(Color("Body"))
-                    .font(.system(size: 17, weight: .regular, design: .rounded))
+                    .font(.SFUIDisplayFontRegularSeventeen())
+
             }
             .padding(.horizontal, spacing)
             .padding(.top, 5)
