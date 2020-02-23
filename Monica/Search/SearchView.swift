@@ -10,13 +10,13 @@ import SwiftUI
 
 struct SearchView: View {
     
-    @ObservedObject var viewModel: SearchViewModel
-    var searchController: SearchViewController<ContactSearchView>
+    @ObservedObject var viewModel: ListContactsViewModel<ContactService>
+    var searchController: SearchViewController<ListContactsView<ContactService>>
     
-    init(viewModel:SearchViewModel) {
+    init(viewModel:ListContactsViewModel<ContactService>) {
         self.viewModel = viewModel
         searchController = SearchViewController(content: {
-            ContactSearchView(viewModel: viewModel)
+            ListContactsView(viewModel: viewModel)
         })
         viewModel.apply(.searchText(text: searchController.publisher))
     }
@@ -29,29 +29,7 @@ struct SearchView: View {
 struct SearchView_Previews: PreviewProvider {
     @State static var showing = false
     static var previews: some View {
-        SearchView(viewModel: .init())
+        SearchView(viewModel: .init(id: nil))
     }
 }
 #endif
-
-
-struct ContactSearchView: View {
-    
-    @ObservedObject var viewModel: SearchViewModel
-
-    var body: some View {
-        List {
-            ForEach(self.viewModel.searchListcontacts) { item in
-                NavigationLink(destination: ContactDetailsView(viewModel: .init(id: item.id))) {
-                    ContactCell(lastname: item.lastName,
-                                firstname: item.firstName,
-                                nickname: item.nickname,
-                                isFavorite: item.isStarred)
-                }
-                .padding(.vertical, 8.0)
-            }
-        }.onAppear {
-            self.viewModel.apply(.onAppear)
-        }
-    }
-}

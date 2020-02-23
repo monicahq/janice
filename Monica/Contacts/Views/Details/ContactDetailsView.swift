@@ -38,12 +38,13 @@ struct ContactDetailsView: View {
                     content(contact: contact)
                 )
             } else {
-                return AnyView(Text("No data"))
+                return AnyView(                    EmptyContactDetailsView()
+                )
             }
         case .loading:
             return AnyView(
                 VStack(alignment: .center) {
-                    LottieView(filename: "loading")
+                    LottieView(filename: "pulse-loader")
                 }
                 .onAppear {
                     self.viewModel.apply(.onAppear)

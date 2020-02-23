@@ -20,15 +20,21 @@ class ContactAssembly: Assembly {
         }
 
         container.register(ActivityAPI.self) { r in
-           return ActivityAPI(provider: container.resolve(MoyaProvider<MultiTarget>.self)!)
+            return ActivityAPI(provider: r.resolve(MoyaProvider<MultiTarget>.self)!)
         }
         container.register(ActivityService.self) { r in
-           return ActivityService()
+            return ActivityService()
+        }
+        container.register(TagService.self) { r in
+            return TagService()
+        }
+        container.register(TagAPI.self) { r in
+            return TagAPI(provider: r.resolve(MoyaProvider<MultiTarget>.self)!)
         }
         container.register(MoyaProvider<MultiTarget>.self) { r in
             return MoyaProvider<MultiTarget>(
-            plugins: [
-                AuthPlugin(authentiationService: container.resolve(AuthenticationService.self)!)
+                plugins: [
+                    AuthPlugin(authentiationService: container.resolve(AuthenticationService.self)!)
             ])
         }.inObjectScope(.container)
     }

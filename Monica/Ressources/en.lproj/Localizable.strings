@@ -14,4 +14,5 @@
 "error" = "Error";
 "ok" = "Ok";
 "alert_login_error" = "Check your email or your password field.";
-
+"empty_contact_text" = "Monica is all about people.";
+"contact_title" = "Your contacts";

@@ -16,7 +16,7 @@ class AuthenticationApi: NSObject {
         let parameters = ["email":email,"password": password]
 
         return Future { promise in
-            Alamofire.request("https://app.monicahq.com/oauth/login",
+            AF.request("https://app.monicahq.com/oauth/login",
                        method: .post,
                        parameters: parameters)
                 .validate()

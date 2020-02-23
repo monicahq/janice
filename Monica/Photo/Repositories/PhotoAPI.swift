@@ -16,11 +16,21 @@ enum PhotoError: Error {
 }
 
 class PhotoAPI {
+
+    // MARK: Private Properties
+
     private let provider: MoyaProvider<MultiTarget>
 
+    // MARK: Init
+
+
+    /// Default Initializer.
+    /// - Parameter provider: Moya API Provider.
     init(provider:MoyaProvider<MultiTarget>) {
         self.provider = provider
     }
+
+    // MARK: Public Functions
 
     func getPhotosForContact(contactId:String) -> Future<[Photo], Error> {
         return Future { promise in

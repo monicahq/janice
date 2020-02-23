@@ -9,7 +9,7 @@
 import Moya
 
 enum MonicaAPI {
-    case getContacts
+    case getContacts(query: String?)
     case getContact(id:String)
     case getContactNotes(id:String)
     case deleteContact(id:String)
@@ -42,11 +42,17 @@ extension MonicaAPI: TargetType {
     }
     var task: Task {
         switch self {
-        case .getContacts, .deleteContact, .getContactNotes, .getContactReminders:
+        case .deleteContact, .getContactNotes, .getContactReminders:
             return .requestPlain
         case .getContact:
             var params: [String: Any] = [:]
             params["with"] = "contactfields"
+            return .requestParameters(parameters: params, encoding: URLEncoding.default)
+        case .getContacts(let query):
+            var params: [String: Any] = [:]
+            if let query = query {
+                params["query"] = query
+            }
             return .requestParameters(parameters: params, encoding: URLEncoding.default)
         }
         

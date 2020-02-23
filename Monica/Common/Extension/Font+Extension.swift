@@ -12,11 +12,21 @@ extension Font {
 
     static func SFUIDisplayFontRegularSeventeen() -> Font
     {
-        return .system(size: 17.0, weight: .regular, design: .rounded)
+        return .system(size: 17.0, weight: .regular, design: .default)
+    }
+
+    static func SFUIDisplayFontSemiBoldSeventeen() -> Font
+    {
+        return .system(size: 17.0, weight: .semibold, design: .default)
+    }
+
+    static func SFUIDisplayFontBoldTitle() -> Font
+    {
+        return .system(size: 34.0, weight: .bold, design: .default)
     }
 
     static func SFUIDisplayFontRegularTwelve() -> Font
     {
-        return .system(size: 12.0, weight: .regular, design: .rounded)
+        return .system(size: 12.0, weight: .regular, design: .default)
     }
 }

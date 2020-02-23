@@ -24,9 +24,9 @@ class ContactAPI {
         self.provider = provider
     }
 
-    func getContacts() -> Future<[Contact], Error> {
+    func getContacts(query:String? = nil) -> Future<[Contact], Error> {
         return Future { promise in
-            self.provider.request(MultiTarget(MonicaAPI.getContacts)) { result in
+            self.provider.request(MultiTarget(MonicaAPI.getContacts(query: query))) { result in
                 switch result {
                 case let .success(moyaResponse):
                     do {

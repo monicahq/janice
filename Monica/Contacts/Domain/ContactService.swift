@@ -10,25 +10,27 @@ import Foundation
 import Combine
 import Moya
 
-class ContactService {
-
+class ContactService: Contactable {
+    
     private let contactApi = MonicaAssembler.sharedInstance.assembler.resolver.resolve(ContactAPI.self)!
 
-    func getAllContacts() -> AnyPublisher<[Contact], Never> {
+    func getContacts(params: Any?) ->  AnyPublisher<[Contact], Error> {
+        var query:String? = nil
+        if let stringQuery = params as? String {
+            query = stringQuery
+        }
+        
         return contactApi
-            .getContacts()
-            .map{ $0.sorted(by: {
-                if $0.lastName.lowercased() != $1.lastName.lowercased() {
-                    return $0.lastName.lowercased() < $1.lastName.lowercased()
-                }
-                else {
-                    return $0.firstName.lowercased() < $1.firstName.lowercased()
-                }
-            }) }
-            .catch { error in
-                Just<[Contact]>([])
+        .getContacts(query: query)
+        .map{ $0.sorted(by: {
+            if $0.lastName.lowercased() != $1.lastName.lowercased() {
+                return $0.lastName.lowercased() < $1.lastName.lowercased()
             }
-            .eraseToAnyPublisher()
+            else {
+                return $0.firstName.lowercased() < $1.firstName.lowercased()
+            }
+        }) }
+        .eraseToAnyPublisher()
     }
 
     func getNotesForContact(contactId: String) -> AnyPublisher<[Note], Error> {

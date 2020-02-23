@@ -7,10 +7,11 @@ target 'Monica' do
 
   pod "InitialsImageView"
   pod 'Swinject'
-  pod 'Moya', '~> 13.0'
+  pod 'Moya', '~> 14.0'
   pod 'SwiftyJSON', '~> 4.0'
   pod 'SDWebImageSwiftUI'
   pod 'lottie-ios'
+  pod 'Alamofire', '~> 5.0'
   pod 'netfox', :configurations => ['Debug']
 
   target 'MonicaTests' do
