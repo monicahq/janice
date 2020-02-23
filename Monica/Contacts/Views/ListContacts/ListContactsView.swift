@@ -9,23 +9,31 @@
 import SwiftUI
 
 struct ListContactsView<T>: View where T : Contactable {
+
+    // MARK: Public Properties
     @ObservedObject var viewModel: ListContactsViewModel<T>
 
     var body: some View {
         List {
-            ForEach(self.viewModel.searchListcontacts) { item in
-                NavigationLink(destination: ContactDetailsView(viewModel: .init(id: item.id))) {
-                    ContactCell(lastname: item.lastName,
-                                firstname: item.firstName,
-                                nickname: item.nickname,
-                                isFavorite: item.isStarred)
-                }
-                .padding(.vertical, 8.0)
+            ForEach(self.viewModel.searchListcontacts) { self.getContactCells(item: $0)
             }
         }.onAppear {
             self.viewModel.apply(.onAppear)
         }
     }
+
+    // MARK: Private Functions
+    private func getContactCells(item: Contact) -> some View {
+        NavigationLink(destination: ContactDetailsView(viewModel: .init(id: item.id))) {
+                           ContactCell(lastname: item.lastName,
+                                       firstname: item.firstName,
+                                       nickname: item.nickname,
+                                       isFavorite: item.isStarred)
+                       }
+                       .padding(.vertical, 8.0)
+
+    }
+
 }
 
 #if DEBUG

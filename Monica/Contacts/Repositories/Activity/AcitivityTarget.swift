@@ -11,6 +11,7 @@ import Moya
 enum ActivityTarget {
     case getActivities
     case getContactActivities(id: String)
+    case getReminder
 }
 
 extension ActivityTarget: TargetType {
@@ -19,6 +20,8 @@ extension ActivityTarget: TargetType {
         switch self {
         case .getActivities:
             return "/activities/"
+        case .getReminder:
+            return "/reminders/"
         case .getContactActivities(let id):
             return "/contacts/\(id)/activities/"
         }
@@ -26,20 +29,20 @@ extension ActivityTarget: TargetType {
 
     var method: Moya.Method {
         switch self {
-        case .getActivities,.getContactActivities:
+        case .getActivities,.getContactActivities,.getReminder:
             return .get
         }
     }
     var task: Task {
         switch self {
-        case .getActivities, .getContactActivities:
+        case .getActivities, .getContactActivities, .getReminder:
             return .requestPlain
         }
     }
 
     var validationType: ValidationType {
         switch self {
-        case .getActivities, .getContactActivities:
+        case .getActivities, .getContactActivities, .getReminder:
             return .successCodes
         }
     }
@@ -54,6 +57,12 @@ extension ActivityTarget: TargetType {
             return data
         case .getContactActivities:
             guard let url = Bundle.main.url(forResource: "contactActivities", withExtension: "json"),
+                let data = try? Data(contentsOf: url) else {
+                    return Data()
+            }
+            return data
+        case .getReminder:
+            guard let url = Bundle.main.url(forResource: "reminders", withExtension: "json"),
                 let data = try? Data(contentsOf: url) else {
                     return Data()
             }

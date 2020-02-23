@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-class SearchContactViewModel: ObservableObject, UnidirectionalDataFlow {
+class SearchContactViewModel: ObservableObject {
 
     // MARK: Public Properties
 
@@ -21,16 +21,12 @@ class SearchContactViewModel: ObservableObject, UnidirectionalDataFlow {
         case unknowError
     }
 
-    enum Input {
-    }
-
     // MARK: Private Properties
 
     private let contactService = MonicaAssembler.sharedInstance.assembler.resolver.resolve(ContactService.self)!
     private var disposables = Set<AnyCancellable>()
 
     // MARK: Init
-
 
     /// Default Initializer.
     init() {
@@ -43,8 +39,5 @@ class SearchContactViewModel: ObservableObject, UnidirectionalDataFlow {
                 }
             )
             .store(in: &disposables)
-    }
-
-    func apply(_ input: Input) {
     }
 }

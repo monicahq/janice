@@ -21,7 +21,7 @@ struct HomeView: View {
                 }.tag(0)
                 StickyHeader()
                     .tabItem {
-                        Image("contacts")
+                        Image("peoples_icon")
                         Text("Contacts")
                 }.tag(1)
                 SearchContactView(viewModel: .init())
