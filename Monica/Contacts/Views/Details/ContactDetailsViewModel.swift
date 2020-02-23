@@ -93,23 +93,6 @@ class ContactDetailsViewModel: ObservableObject, UnidirectionalDataFlow {
         return contactFields.map { $0.toContactFieldDto() }
     }
 
-    private func getContactNotes(contactId: Int) {
-        getPhotosSubject
-            .setFailureType(to: Error.self)
-            .flatMap{ self.contactService.getNotesForContact(contactId: contactId.description) }
-            .sink(receiveCompletion: { [weak self] value in
-                 guard let self = self else { return }
-                               switch value {
-                               case .failure:
-                                   self.note = []
-                               case .finished:
-                                   break
-                               }
-            }) { notes in
-                self.note = notes //ListNotesViewModel(notes: notes)
-        }.store(in: &disposables)
-    }
-
     private func transformDate(date:Date)-> String? {
         let dateFormatter = DateFormatter.standardMonth
         return dateFormatter.string(from: date).description
