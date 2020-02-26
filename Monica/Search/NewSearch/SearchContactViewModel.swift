@@ -32,7 +32,19 @@ class SearchContactViewModel: ObservableObject {
     init() {
         results = ListState.error(SearchContactError.noSearch)
 
-        $searchText
+        let searchTextShare = $searchText
+            .debounce(for: .milliseconds(500), scheduler: RunLoop.main)
+            .share()
+        
+            searchTextShare
+            .sink(receiveValue: { [weak self] text in
+                if text.isEmpty {
+                    self?.results = ListState.error(SearchContactError.noSearch)
+                }
+            }).store(in: &disposables)
+
+        
+        searchTextShare
             .filter{ !$0.isEmpty }
             .sink(receiveValue: {
                     self.results = ListState.items(data: ListContactsViewModel(id: $0))

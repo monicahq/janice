@@ -17,6 +17,7 @@ struct SearchContactView: View {
     // MARK: Private Properties
 
     @State private var isNavigationBarHidden = true
+    private var homeSearchView: HomeSearchView = HomeSearchView(viewModel: .init())
 
     var body: some View {
         NavigationView {
@@ -36,6 +37,10 @@ struct SearchContactView: View {
             .edgesIgnoringSafeArea([.top])
         }
     }
+    
+    init(viewModel: SearchContactViewModel) {
+        self.viewModel = viewModel
+    }
 
     // MARK: Private Functions
 
@@ -44,7 +49,7 @@ struct SearchContactView: View {
         case .error(let error):
             if let searchError = error as? SearchContactViewModel.SearchContactError,
                 searchError == .noSearch {
-                return AnyView(HomeSearchView(viewModel: .init()))
+                return AnyView(homeSearchView)
             }
             return AnyView(ErrorView(text: error.localizedDescription))
         case .items(let viewModel):
@@ -58,7 +63,6 @@ struct SearchContactView: View {
                 }
             )
         }
-
     }
 }
 

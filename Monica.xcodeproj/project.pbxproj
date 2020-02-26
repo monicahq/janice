@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		083471115CE51ABB1AB583D9 /* Pods_MonicaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E322FF10DAEED84D7B28F2F /* Pods_MonicaTests.framework */; };
+		579CA4F544C6BA75E3E3A434 /* libPods-MonicaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7776E03A35A142572E06E3A /* libPods-MonicaTests.a */; };
 		C1150A6823E8F14C00A34BE8 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1150A6723E8F14C00A34BE8 /* PageView.swift */; };
 		C11D08D923CF42DF00A7602A /* ContactMenuUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11D08D823CF42DF00A7602A /* ContactMenuUIView.swift */; };
 		C12474E52394704F00F534AA /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12474E42394704F00F534AA /* MapView.swift */; };
@@ -112,7 +112,7 @@
 		C1FFBD1923CD5AEB003E196A /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FFBD1823CD5AEB003E196A /* PhotoService.swift */; };
 		C1FFBD1B23CD5C6C003E196A /* PhotoCarrouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FFBD1A23CD5C6C003E196A /* PhotoCarrouselView.swift */; };
 		C1FFBD1E23CD5CE6003E196A /* PhotoCarrouselViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FFBD1D23CD5CE6003E196A /* PhotoCarrouselViewModel.swift */; };
-		D47A4B9D360724567F6A7587 /* Pods_Monica.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ABD005156D287AE71E2C851 /* Pods_Monica.framework */; };
+		E924581C8E0BC44447039D93 /* libPods-Monica.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E1B1D316B00FA037341D440 /* libPods-Monica.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,10 +127,10 @@
 
 /* Begin PBXFileReference section */
 		4A8B7F171DBBE1FD5B12A4BE /* Pods-Monica.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monica.release.xcconfig"; path = "Target Support Files/Pods-Monica/Pods-Monica.release.xcconfig"; sourceTree = "<group>"; };
-		4E322FF10DAEED84D7B28F2F /* Pods_MonicaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MonicaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E1B1D316B00FA037341D440 /* libPods-Monica.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Monica.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50034FC6DFF13EE6E390F7CD /* Pods-Monica.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monica.debug.xcconfig"; path = "Target Support Files/Pods-Monica/Pods-Monica.debug.xcconfig"; sourceTree = "<group>"; };
 		548748B35128A7021591ED9D /* Pods-MonicaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonicaTests.release.xcconfig"; path = "Target Support Files/Pods-MonicaTests/Pods-MonicaTests.release.xcconfig"; sourceTree = "<group>"; };
-		9ABD005156D287AE71E2C851 /* Pods_Monica.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Monica.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7776E03A35A142572E06E3A /* libPods-MonicaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MonicaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1150A6723E8F14C00A34BE8 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		C11D08D823CF42DF00A7602A /* ContactMenuUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMenuUIView.swift; sourceTree = "<group>"; };
 		C12474E42394704F00F534AA /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -248,7 +248,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D47A4B9D360724567F6A7587 /* Pods_Monica.framework in Frameworks */,
+				E924581C8E0BC44447039D93 /* libPods-Monica.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +256,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				083471115CE51ABB1AB583D9 /* Pods_MonicaTests.framework in Frameworks */,
+				579CA4F544C6BA75E3E3A434 /* libPods-MonicaTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -745,8 +745,8 @@
 		E396E8A50B59DBDCC67571C2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9ABD005156D287AE71E2C851 /* Pods_Monica.framework */,
-				4E322FF10DAEED84D7B28F2F /* Pods_MonicaTests.framework */,
+				4E1B1D316B00FA037341D440 /* libPods-Monica.a */,
+				A7776E03A35A142572E06E3A /* libPods-MonicaTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -762,15 +762,12 @@
 				C1B7034923863C250065BB34 /* Sources */,
 				C1B7034A23863C250065BB34 /* Frameworks */,
 				C1B7034B23863C250065BB34 /* Resources */,
-				C4076F18FFE3A05A6D689CAB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Monica;
-			packageProductDependencies = (
-			);
 			productName = Monica;
 			productReference = C1B7034D23863C250065BB34 /* Monica.app */;
 			productType = "com.apple.product-type.application";
@@ -823,8 +820,6 @@
 				"fr-CA",
 			);
 			mainGroup = C1B7034423863C250065BB34;
-			packageReferences = (
-			);
 			productRefGroup = C1B7034E23863C250065BB34 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -878,23 +873,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C4076F18FFE3A05A6D689CAB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Monica/Pods-Monica-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Monica/Pods-Monica-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Monica/Pods-Monica-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E92A66B0860BC8735E6A0C41 /* [CP] Check Pods Manifest.lock */ = {

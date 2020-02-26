@@ -22,12 +22,9 @@ struct HomeSearchView: View {
             )
         case .items(let tags):
             if !tags.isEmpty {
-                return AnyView(
-                    getPagerStripView(tags: tags)
-                )
+                return AnyView(getPagerStripView(tags: tags))
             } else {
-                return AnyView(                    EmptyContactDetailsView()
-                )
+                return AnyView(EmptyContactDetailsView())
             }
         case .loading:
             return AnyView(
