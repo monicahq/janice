@@ -37,7 +37,7 @@ class DashboardViewModel: ObservableObject, UnidirectionalDataFlow {
     init (){
         onAppearSubject
             .setFailureType(to: Error.self)
-            .flatMap { self.contactAPI.getContacts()}
+            .flatMap { _ in self.contactAPI.getContacts()}
             .sink(receiveCompletion: { [weak self] value in
                 guard let self = self else { return }
                 switch value {

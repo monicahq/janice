@@ -11,6 +11,8 @@ import Combine
 
 class PhotoCarrouselViewModel: ObservableObject, UnidirectionalDataFlow{
 
+    // MARK: Public Properties
+
     enum Input {
         case onAppear
     }
@@ -20,7 +22,6 @@ class PhotoCarrouselViewModel: ObservableObject, UnidirectionalDataFlow{
         case .onAppear : onAppearSubject.send()
         }
     }
-
     @Published var photos:[Photo] = []
 
     // MARK: Private Properties

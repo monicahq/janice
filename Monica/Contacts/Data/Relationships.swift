@@ -93,34 +93,3 @@ extension Relationship {
     }
 }
 #endif
-
-#if DEBUG
-extension Contact {
-    init() {
-        self.addresses = [Address]()
-        self.completeName = ""
-        self.contactFields = nil
-        self.createdAt = ""
-        self.descriptionField = ""
-        self.firstName = ""
-        self.lastName = ""
-        self.gender = ""
-        self.genderType = ""
-        self.lastActivityTogether = nil
-        self.hashId = ""
-        self.id = 0
-        self.information = nil
-        self.isActive = true
-        self.isDead = false
-        self.isMe = false
-        self.isPartial = false
-        self.lastCalled = ""
-        self.nickname = ""
-        self.object = ""
-        self.updatedAt = ""
-        self.url = ""
-        self.isStarred = false
-        self.notes = nil
-    }
-}
-#endif

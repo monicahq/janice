@@ -36,7 +36,8 @@ class ContactListViewModel: ObservableObject, UnidirectionalDataFlow {
     // MARK: Init
     init() {
         onAppearSubject
-            .flatMap { self.contactAPI.getAllContacts()}
+            .setFailureType(to: Error.self)
+            .flatMap { self.contactAPI.getContacts(params: nil)}
             .sink(receiveCompletion: { [weak self] value in
                 guard let self = self else { return }
                 switch value {

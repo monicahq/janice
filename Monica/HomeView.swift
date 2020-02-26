@@ -21,20 +21,14 @@ struct HomeView: View {
                 }.tag(0)
                 StickyHeader()
                     .tabItem {
-                        Image("contacts")
+                        Image("peoples_icon")
                         Text("Contacts")
                 }.tag(1)
-                SearchView(viewModel: .init())
-                    .tabItem {
-                        Image(systemName: "3.circle")
-                        Text("Search")
-                }.tag(2)
-
                 SearchContactView(viewModel: .init())
                     .tabItem {
-                        Image(systemName: "3.circle")
+                        Image("peoples_icon")
                         Text("Search")
-                }.tag(3)
+                }.tag(2)
             }
 
             if showModal.modalViewModel != nil {

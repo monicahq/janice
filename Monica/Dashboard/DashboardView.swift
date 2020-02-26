@@ -103,7 +103,7 @@ struct DashboardView: View {
                             Button(action: { self.showContent.toggle() }) {
                                 GeometryReader { geometry in
                                     ContactView(title: item.summary,
-                                                subtitle: item.description ?? "")
+                                                subtitle: item.description)
                                         .rotation3DEffect(Angle(degrees:
                                             Double(geometry.frame(in: .global).minX - 30) / -40), axis: (x: 0, y: 10.0, z: 0))
                                         .sheet(isPresented: self.$showContent) { ContactView(title: "",

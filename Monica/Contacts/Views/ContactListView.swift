@@ -95,10 +95,11 @@ struct Tile: View {
     }
 }
 
+#if DEBUG
 struct Tile_Previews: PreviewProvider {
     static var previews: some View {
         Tile(imageName: "turtlerock", tileLabel: "Arches")
     }
 }
-
+#endif
 

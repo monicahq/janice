@@ -73,16 +73,22 @@ class ActivityAPI {
 
     func getReminders() -> Future<[Reminder], Error> {
         return Future { promise in
-//            Alamofire.request("https://app.monicahq.com/api/reminders/",headers: headers)
-//                .validate()
-//                .responseDecodable(of: DataModel<Reminder>.self) { response in
-//                    switch response.result {
-//                    case .success (let list):
-//                        promise(.success(list.data))
-//                    case let .failure(error):
-//                        promise(.failure(error))
-//                    }
-//            }
+            self.provider.request(MultiTarget(ActivityTarget.getReminder)) { result in
+                switch result {
+                case let .success(moyaResponse):
+                    do {
+                        let json = try JSON(data: moyaResponse.data)
+                        let data = DatasModel<Reminder>(fromJson: json)
+                        promise(Swift.Result.success(data.data))
+
+                    }
+                    catch {
+                        promise(.failure(ActivityError.unknowError))
+                    }
+                case let .failure(error):
+                    promise(.failure(error))
+                }
+            }
         }
     }
 

@@ -62,10 +62,13 @@ struct LoginView: View {
             Alert(title: Text("Important message"), message: Text("alert_login_error"), dismissButton: .default(Text("ok")))
 
         })
-            .frame(width: geometry.size.width - 30, height: 50.0)
+            .frame(minWidth: 0, maxWidth: .infinity)
+            .frame(height: 50.0)
             .background(Color("MonicaBlue"))
             .cornerRadius(8)
+            .padding(.horizontal, 30)
             .padding(.top, 30)
+
     }
 
     private func formLoginScreen() -> some View {
@@ -105,7 +108,8 @@ struct LoginView: View {
 #if DEBUG
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(viewModel: .init())            .environment(\.locale, .init(identifier: "en"))
+        LoginView(viewModel: .init())
+            .environment(\.locale, .init(identifier: "en"))
 
     }
 }

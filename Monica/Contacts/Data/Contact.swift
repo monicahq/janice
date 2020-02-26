@@ -167,3 +167,34 @@ struct Contact: Identifiable, SwiftyJson {
         return dictionary
     }
 }
+
+#if DEBUG
+extension Contact {
+    init() {
+        self.addresses = [Address]()
+        self.completeName = ""
+        self.contactFields = nil
+        self.createdAt = ""
+        self.descriptionField = "description"
+        self.firstName = "firstName"
+        self.lastName = "lastname"
+        self.gender = ""
+        self.genderType = ""
+        self.lastActivityTogether = nil
+        self.hashId = ""
+        self.id = 0
+        self.information = nil
+        self.isActive = true
+        self.isDead = false
+        self.isMe = false
+        self.isPartial = false
+        self.lastCalled = ""
+        self.nickname = ""
+        self.object = ""
+        self.updatedAt = ""
+        self.url = ""
+        self.isStarred = false
+        self.notes = nil
+    }
+}
+#endif

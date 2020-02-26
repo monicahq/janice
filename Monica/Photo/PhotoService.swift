@@ -11,7 +11,11 @@ import Combine
 
 class PhotoService {
 
+    // MARK: Private Properties
+
     private let photoApi = MonicaAssembler.sharedInstance.assembler.resolver.resolve(PhotoAPI.self)!
+
+    // MARK: Public Functions
 
     func getPhotosForContact(contactId:String) -> AnyPublisher<[Photo], Never> {
         return photoApi
