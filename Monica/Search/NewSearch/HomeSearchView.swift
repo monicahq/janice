@@ -38,6 +38,8 @@ struct HomeSearchView: View {
         }
     }
 
+    private let contactView = ListContactsView<ContactService>(viewModel: .init(id: nil))
+
     // MARK: Private Functions
 
     private func getPagerStripView(tags:[String]) -> some View {
@@ -59,7 +61,7 @@ struct HomeSearchView: View {
                            inactiveAccentColor: Color("Gray"),
                            selectionBarColor: Color.red )
             if self.viewModel.tabChanged == 0 {
-                ListContactsView<ContactService>(viewModel: .init(id: nil))
+               contactView
             }
             else {
                 self.viewModel

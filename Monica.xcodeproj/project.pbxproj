@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		083471115CE51ABB1AB583D9 /* Pods_MonicaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E322FF10DAEED84D7B28F2F /* Pods_MonicaTests.framework */; };
+		932E1F2BDA6CD612E457C0FD /* Pods_Monica.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 933F853937820329A2053860 /* Pods_Monica.framework */; };
+		99F04AE254D7F9311A06E948 /* Pods_MonicaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9467613AF233659F003CB3C8 /* Pods_MonicaTests.framework */; };
+		C10CFE8524512E3200DCB692 /* NavigationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10CFE8424512E3200DCB692 /* NavigationConfigurator.swift */; };
+		C10CFE882451443700DCB692 /* AddContactFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10CFE872451443700DCB692 /* AddContactFormView.swift */; };
 		C1150A6823E8F14C00A34BE8 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1150A6723E8F14C00A34BE8 /* PageView.swift */; };
 		C11D08D923CF42DF00A7602A /* ContactMenuUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11D08D823CF42DF00A7602A /* ContactMenuUIView.swift */; };
 		C12474E52394704F00F534AA /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12474E42394704F00F534AA /* MapView.swift */; };
@@ -112,7 +115,6 @@
 		C1FFBD1923CD5AEB003E196A /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FFBD1823CD5AEB003E196A /* PhotoService.swift */; };
 		C1FFBD1B23CD5C6C003E196A /* PhotoCarrouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FFBD1A23CD5C6C003E196A /* PhotoCarrouselView.swift */; };
 		C1FFBD1E23CD5CE6003E196A /* PhotoCarrouselViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FFBD1D23CD5CE6003E196A /* PhotoCarrouselViewModel.swift */; };
-		D47A4B9D360724567F6A7587 /* Pods_Monica.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ABD005156D287AE71E2C851 /* Pods_Monica.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,11 +128,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4A8B7F171DBBE1FD5B12A4BE /* Pods-Monica.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monica.release.xcconfig"; path = "Target Support Files/Pods-Monica/Pods-Monica.release.xcconfig"; sourceTree = "<group>"; };
-		4E322FF10DAEED84D7B28F2F /* Pods_MonicaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MonicaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		50034FC6DFF13EE6E390F7CD /* Pods-Monica.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monica.debug.xcconfig"; path = "Target Support Files/Pods-Monica/Pods-Monica.debug.xcconfig"; sourceTree = "<group>"; };
-		548748B35128A7021591ED9D /* Pods-MonicaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonicaTests.release.xcconfig"; path = "Target Support Files/Pods-MonicaTests/Pods-MonicaTests.release.xcconfig"; sourceTree = "<group>"; };
-		9ABD005156D287AE71E2C851 /* Pods_Monica.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Monica.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D79B7CC6BFF14A8C5794A37 /* Pods-MonicaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonicaTests.release.xcconfig"; path = "Target Support Files/Pods-MonicaTests/Pods-MonicaTests.release.xcconfig"; sourceTree = "<group>"; };
+		6FAB125FFBB372E498BCAF9A /* Pods-Monica.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monica.release.xcconfig"; path = "Target Support Files/Pods-Monica/Pods-Monica.release.xcconfig"; sourceTree = "<group>"; };
+		91B1DCAD965D0993911B67A0 /* Pods-Monica.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monica.debug.xcconfig"; path = "Target Support Files/Pods-Monica/Pods-Monica.debug.xcconfig"; sourceTree = "<group>"; };
+		933F853937820329A2053860 /* Pods_Monica.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Monica.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9467613AF233659F003CB3C8 /* Pods_MonicaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MonicaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C10CFE8424512E3200DCB692 /* NavigationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationConfigurator.swift; sourceTree = "<group>"; };
+		C10CFE872451443700DCB692 /* AddContactFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactFormView.swift; sourceTree = "<group>"; };
 		C1150A6723E8F14C00A34BE8 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		C11D08D823CF42DF00A7602A /* ContactMenuUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMenuUIView.swift; sourceTree = "<group>"; };
 		C12474E42394704F00F534AA /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -240,7 +244,7 @@
 		C1FFBD1823CD5AEB003E196A /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
 		C1FFBD1A23CD5C6C003E196A /* PhotoCarrouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCarrouselView.swift; sourceTree = "<group>"; };
 		C1FFBD1D23CD5CE6003E196A /* PhotoCarrouselViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCarrouselViewModel.swift; sourceTree = "<group>"; };
-		EB515C0176E6CF8CF651F78C /* Pods-MonicaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonicaTests.debug.xcconfig"; path = "Target Support Files/Pods-MonicaTests/Pods-MonicaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EEEB825DAE48F86CF29FB86E /* Pods-MonicaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonicaTests.debug.xcconfig"; path = "Target Support Files/Pods-MonicaTests/Pods-MonicaTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,7 +252,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D47A4B9D360724567F6A7587 /* Pods_Monica.framework in Frameworks */,
+				932E1F2BDA6CD612E457C0FD /* Pods_Monica.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,13 +260,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				083471115CE51ABB1AB583D9 /* Pods_MonicaTests.framework in Frameworks */,
+				99F04AE254D7F9311A06E948 /* Pods_MonicaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C7387C6311B06A88497C5E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				933F853937820329A2053860 /* Pods_Monica.framework */,
+				9467613AF233659F003CB3C8 /* Pods_MonicaTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C10CFE86245143FB00DCB692 /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				C10CFE872451443700DCB692 /* AddContactFormView.swift */,
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
 		C12474E62394722F00F534AA /* UiComponent */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,6 +321,7 @@
 		C163F84423A8478B00A0A4A5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C10CFE86245143FB00DCB692 /* Add */,
 				C1D59EC124000BEA00733B0C /* ListContacts */,
 				C1CD7D1423EA627C0069A59A /* Relastionships */,
 				C18C33CF23E7568A004D7DCD /* Reminder */,
@@ -428,6 +450,7 @@
 				C1AF366723A1F7E0004DAD73 /* RootFunc.swift */,
 				C1917B8D23AA5C4F000ABA7B /* KeychainWrapper.swift */,
 				C18C33C923E45F3F004D7DCD /* LoadState.swift */,
+				C10CFE8424512E3200DCB692 /* NavigationConfigurator.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -500,7 +523,7 @@
 				C1B7036623863C270065BB34 /* MonicaTests */,
 				C1B7034E23863C250065BB34 /* Products */,
 				DAFF90F274C60E19E418B792 /* Pods */,
-				E396E8A50B59DBDCC67571C2 /* Frameworks */,
+				0C7387C6311B06A88497C5E7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -734,21 +757,12 @@
 		DAFF90F274C60E19E418B792 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				50034FC6DFF13EE6E390F7CD /* Pods-Monica.debug.xcconfig */,
-				4A8B7F171DBBE1FD5B12A4BE /* Pods-Monica.release.xcconfig */,
-				EB515C0176E6CF8CF651F78C /* Pods-MonicaTests.debug.xcconfig */,
-				548748B35128A7021591ED9D /* Pods-MonicaTests.release.xcconfig */,
+				91B1DCAD965D0993911B67A0 /* Pods-Monica.debug.xcconfig */,
+				6FAB125FFBB372E498BCAF9A /* Pods-Monica.release.xcconfig */,
+				EEEB825DAE48F86CF29FB86E /* Pods-MonicaTests.debug.xcconfig */,
+				1D79B7CC6BFF14A8C5794A37 /* Pods-MonicaTests.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		E396E8A50B59DBDCC67571C2 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9ABD005156D287AE71E2C851 /* Pods_Monica.framework */,
-				4E322FF10DAEED84D7B28F2F /* Pods_MonicaTests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -758,19 +772,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C1B7036C23863C270065BB34 /* Build configuration list for PBXNativeTarget "Monica" */;
 			buildPhases = (
-				A186A2FFC351960F37E3B7B3 /* [CP] Check Pods Manifest.lock */,
+				A348F6B88E72340BC308D90A /* [CP] Check Pods Manifest.lock */,
 				C1B7034923863C250065BB34 /* Sources */,
 				C1B7034A23863C250065BB34 /* Frameworks */,
 				C1B7034B23863C250065BB34 /* Resources */,
-				C4076F18FFE3A05A6D689CAB /* [CP] Embed Pods Frameworks */,
+				D71234C869236C274CD3F950 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Monica;
-			packageProductDependencies = (
-			);
 			productName = Monica;
 			productReference = C1B7034D23863C250065BB34 /* Monica.app */;
 			productType = "com.apple.product-type.application";
@@ -779,7 +791,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C1B7036F23863C270065BB34 /* Build configuration list for PBXNativeTarget "MonicaTests" */;
 			buildPhases = (
-				E92A66B0860BC8735E6A0C41 /* [CP] Check Pods Manifest.lock */,
+				8862F67D15C6041135EF1B6E /* [CP] Check Pods Manifest.lock */,
 				C1B7035F23863C270065BB34 /* Sources */,
 				C1B7036023863C270065BB34 /* Frameworks */,
 				C1B7036123863C270065BB34 /* Resources */,
@@ -823,8 +835,6 @@
 				"fr-CA",
 			);
 			mainGroup = C1B7034423863C250065BB34;
-			packageReferences = (
-			);
 			productRefGroup = C1B7034E23863C250065BB34 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -858,7 +868,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A186A2FFC351960F37E3B7B3 /* [CP] Check Pods Manifest.lock */ = {
+		8862F67D15C6041135EF1B6E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MonicaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A348F6B88E72340BC308D90A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -880,7 +912,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C4076F18FFE3A05A6D689CAB /* [CP] Embed Pods Frameworks */ = {
+		D71234C869236C274CD3F950 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -895,28 +927,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Monica/Pods-Monica-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E92A66B0860BC8735E6A0C41 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MonicaTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -966,6 +976,7 @@
 				C1824BB4238B8D4D007475D6 /* DatasModel.swift in Sources */,
 				C179F91B23AC392F0045E224 /* ContactCell.swift in Sources */,
 				C1CE563C23FE221F006123D5 /* Tag.swift in Sources */,
+				C10CFE882451443700DCB692 /* AddContactFormView.swift in Sources */,
 				C14F9A4723E3D68C006BCC3D /* RoundedCorner.swift in Sources */,
 				C15645BC23BE8B38009195DD /* Relationships.swift in Sources */,
 				C1FFBD1723CD5851003E196A /* Photo.swift in Sources */,
@@ -987,6 +998,7 @@
 				C18C33D323E75730004D7DCD /* ReminderListeView.swift in Sources */,
 				C1824BB6238B8DE2007475D6 /* Reminder.swift in Sources */,
 				C1F919F623D80EB400918BBD /* ActivitiesView.swift in Sources */,
+				C10CFE8524512E3200DCB692 /* NavigationConfigurator.swift in Sources */,
 				C1D59EC524000E2700733B0C /* Contactable.swift in Sources */,
 				C1F919F423D80DD300918BBD /* ActivitiesViewModel.swift in Sources */,
 				C1F9959323CA6B61007E7A6E /* UrlImageView.swift in Sources */,
@@ -1184,12 +1196,13 @@
 		};
 		C1B7036D23863C270065BB34 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 50034FC6DFF13EE6E390F7CD /* Pods-Monica.debug.xcconfig */;
+			baseConfigurationReference = 91B1DCAD965D0993911B67A0 /* Pods-Monica.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_ASSET_PATHS = "\"Monica/Preview Content\"";
-				DEVELOPMENT_TEAM = LBG2HC972H;
+				DEVELOPMENT_TEAM = MVHSH3DLRY;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Monica/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1197,8 +1210,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.julien.monica.qa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.monica.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Monica V2 Development";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1206,12 +1220,13 @@
 		};
 		C1B7036E23863C270065BB34 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A8B7F171DBBE1FD5B12A4BE /* Pods-Monica.release.xcconfig */;
+			baseConfigurationReference = 6FAB125FFBB372E498BCAF9A /* Pods-Monica.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_ASSET_PATHS = "\"Monica/Preview Content\"";
-				DEVELOPMENT_TEAM = LBG2HC972H;
+				DEVELOPMENT_TEAM = MVHSH3DLRY;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Monica/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1219,8 +1234,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.julien.monica.qa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.monica.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Monica V2 Production";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1228,7 +1244,7 @@
 		};
 		C1B7037023863C270065BB34 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB515C0176E6CF8CF651F78C /* Pods-MonicaTests.debug.xcconfig */;
+			baseConfigurationReference = EEEB825DAE48F86CF29FB86E /* Pods-MonicaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1251,7 +1267,7 @@
 		};
 		C1B7037123863C270065BB34 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 548748B35128A7021591ED9D /* Pods-MonicaTests.release.xcconfig */;
+			baseConfigurationReference = 1D79B7CC6BFF14A8C5794A37 /* Pods-MonicaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

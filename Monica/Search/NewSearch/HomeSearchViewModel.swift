@@ -27,7 +27,8 @@ class HomeSearchViewModel: ObservableObject ,UnidirectionalDataFlow {
     private let onAppearSubject = PassthroughSubject<Void, Never>()
     private var disposables = Set<AnyCancellable>()
     private let tagService = MonicaAssembler.sharedInstance.assembler.resolver.resolve(TagService.self)!
-    var tags = [Tag]()
+    private var tags = [Tag]()
+    private var contactsTagsVM = [Int: ListContactsViewModel<TagService>]()
 
     // MARK: Init
 
@@ -40,7 +41,7 @@ class HomeSearchViewModel: ObservableObject ,UnidirectionalDataFlow {
         $tabChanged
             .filter{ $0 > 0}
             .map {self.tags[$0-1] }
-            .map { ListContactsViewModel<TagService>(id: $0.id) }
+            .map { self.getOrCreateListContactVm(tagId: $0.id) }
             .assign(to: \.tagContactViewModel, on: self)
             .store(in: &disposables)
 
@@ -55,6 +56,15 @@ class HomeSearchViewModel: ObservableObject ,UnidirectionalDataFlow {
     }
 
     // MARK: Private Functions
+
+    private func getOrCreateListContactVm(tagId:Int) -> ListContactsViewModel<TagService> {
+        if let listContactViewModel = contactsTagsVM[tagId] {
+            return listContactViewModel
+        }
+        let listContactsVm = ListContactsViewModel<TagService>(id: tagId)
+        contactsTagsVM[tagId] = listContactsVm
+        return listContactsVm
+    }
 
     private func getTags(){
         self.tagService

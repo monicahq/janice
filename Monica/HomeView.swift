@@ -35,7 +35,6 @@ struct HomeView: View {
                 ContactMenuUIView(viewModel: showModal.modalViewModel!)
             }
         }
-
     }
 }
 

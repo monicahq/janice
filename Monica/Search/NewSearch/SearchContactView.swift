@@ -17,27 +17,68 @@ struct SearchContactView: View {
     // MARK: Private Properties
 
     @State private var isNavigationBarHidden = true
+    @State var isPresented = false
 
     var body: some View {
-        NavigationView {
-            VStack {
-                SearchBar(text: $viewModel.searchText)
-                searchResultView()
-                Spacer()
+        ZStack {
+            NavigationView {
+                VStack {
+                    HStack {
+                        Image("panda")
+                            .resizable()
+                            .frame(width: 27, height: 27 )
+                        SearchBar(text: $viewModel.searchText)
+                    }
+                    .padding(.leading, 17)
+                    .background(Color("GrayBackground"))
+
+                    searchResultView()
+                        .background(Color.white)
+                    Spacer()
+                }
+                .navigationBarHidden(isNavigationBarHidden)
+                .onAppear {
+                    self.isNavigationBarHidden = true
+                }
+                .onDisappear {
+                    self.isNavigationBarHidden = false
+                }
+                .navigationBarTitle("")
             }
-            .navigationBarHidden(isNavigationBarHidden)
-            .navigationBarTitle("")
-            .onAppear {
-                self.isNavigationBarHidden = true
-            }
-            .onDisappear {
-                self.isNavigationBarHidden = false
-            }
-            .edgesIgnoringSafeArea([.top])
-        }
+
+            addButton()
+        }.modalLink(isPresented: $isPresented,
+                    destination: {
+                        AddContactFormView()
+        })
     }
 
     // MARK: Private Functions
+    private func addButton() -> some View {
+        VStack {
+            Spacer()
+            HStack {
+                Spacer()
+                Button(action: {
+                    withAnimation {
+                        self.isPresented.toggle()
+                    }                }, label: {
+                        Text("+")
+                            .font(.system(.largeTitle))
+                            .frame(width: 77, height: 70)
+                            .foregroundColor(Color.white)
+                            .padding(.bottom, 7)
+                })
+                    .background(Color.blue)
+                    .cornerRadius(38.5)
+                    .padding()
+                    .shadow(color: Color.black.opacity(0.3),
+                            radius: 3,
+                            x: 3,
+                            y: 3)
+            }
+        }
+    }
 
     private func searchResultView() -> some View {
         switch viewModel.results {

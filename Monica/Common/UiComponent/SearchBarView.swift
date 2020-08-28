@@ -22,6 +22,15 @@ struct SearchBar: UIViewRepresentable {
 
         func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
             text = searchText
+            searchBar.showsCancelButton = true
+
+        }
+
+        func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+            text = ""
+            searchBar.resignFirstResponder()
+            searchBar.showsCancelButton = false
+            searchBar.endEditing(true)
         }
     }
     func makeCoordinator() -> SearchBar.Coordinator {
@@ -30,6 +39,7 @@ struct SearchBar: UIViewRepresentable {
 
     func makeUIView(context: UIViewRepresentableContext<SearchBar>) -> UISearchBar {
         let searchBar = UISearchBar(frame: .zero)
+        searchBar.backgroundImage = UIImage()
         searchBar.delegate = context.coordinator
         searchBar.autocapitalizationType = .none
         return searchBar

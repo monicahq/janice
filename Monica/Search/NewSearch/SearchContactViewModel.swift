@@ -33,11 +33,13 @@ class SearchContactViewModel: ObservableObject {
         results = ListState.error(SearchContactError.noSearch)
 
         $searchText
-            .filter{ !$0.isEmpty }
             .sink(receiveValue: {
-                    self.results = ListState.items(data: ListContactsViewModel(id: $0))
+                if $0.isEmpty {
+                    self.results = .error(SearchContactError.noSearch)
+                    return
                 }
-            )
+                self.results = ListState.items(data: ListContactsViewModel(id: $0))
+            })
             .store(in: &disposables)
     }
 }
