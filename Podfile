@@ -3,7 +3,8 @@ platform :ios, '13.0'
 
 target 'Monica' do
   # Comment the next line if you don't want to use dynamic frameworks
-  use_modular_headers!
+  use_frameworks!
+
   pod "InitialsImageView"
   pod 'Swinject'
   pod 'Moya', '~> 14.0'
